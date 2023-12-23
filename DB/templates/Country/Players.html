@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
+    <meta charset="UTF-8">
+    <title>球员信息</title>
+</head>
+<body>
+<img style="width: 70px"  src="{% static 'img/logo.jpeg' %}" >
+<h3 align="center" style="color: aqua">
+    国家队球员
+</h3>
+<table border="1px" width="100%" style="border-collapse: collapse;">
+
+        <tr>
+           
+            <th>姓名</th>
+            <th>国籍</th>
+            <th>球队位置</th>
+            <th>球号</th>
+            
+        </tr>
+        {% for player in players %}
+            <tr>
+                <td align="center">{{ player.Name }}</td>
+                <td align="center">{{ player.Nation}} </td>
+                <td align="center">{{ player.Position}} </td>
+            <td align="center">{{ player.Number}} </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

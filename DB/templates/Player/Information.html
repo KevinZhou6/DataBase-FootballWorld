@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
+    
+    <meta charset="UTF-8">
+    <title>球员基本信息</title>
+</head>
+<body>
+<img style="width: 70px"  src="{% static 'img/logo.jpeg' %}" >
+<h3 align="center" style="color: aqua">
+    全球球员基本信息
+</h3>
+<form method="post" action="./">
+    {% csrf_token %}
+
+ <table border="1px" width="100%" style="border-collapse: collapse;">
+        <tr>
+            <th>
+                <input type="submit" value="比赛数" name = 'game1'>
+                
+            </th>
+             <th>
+                <input type="submit" value="进球数" name = 'goal1'>
+                
+            </th>
+            
+        </tr>
+    </table>
+</form>
+    <table border="1px" width="100%" style="border-collapse: collapse;">
+
+        <tr>
+           
+            <th>姓名</th>
+            <th>国籍</th>
+            <th>生涯比赛数</th>
+            <th>生涯进球数</th>
+            <th>编辑</th>
+          
+
+        </tr>
+        {% for player in players %}
+            <tr>
+               
+                <td align="center">{{ player.Name}} </td>
+                <td align="center">{{ player.Country}} </td>
+                <td align="center">{{ player.CareerGames}} </td>
+                <td align="center">{{ player.CareerGoals}} </td>
+                <td align="center">
+             
+                <a href="../Information/delete?id={{ player.Id }}">
+                    删除
+                </a>
+            </td>
+
+            </tr>
+        {% endfor %}
+    </table>
+ <div align="left">
+        <a href="../Information/add">
+            <img style="width: 50px" src="{% static 'img/R-C.png' %}" />
+        </a>
+        
+    </div>
+</body>
+</html>

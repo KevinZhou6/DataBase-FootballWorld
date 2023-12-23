@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索指定世界杯</title>
+      <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
+</head>
+<body>
+   <img style="width: 70px"  src="{% static 'img/logo.jpeg' %}" >
+     <form method="post" action="../CupWorld/">
+    {% csrf_token %}
+    <table align="center">
+        <tr>
+            <th>举办时间</th>
+            <td><input name="time"></td>
+        </tr>
+        <tr>
+            <th>举办地</th>
+            <td><input name="place"/></td>
+        </tr>
+            <th>冠军</th>
+            <td><input name="country"/></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit"/>
+            </td>
+        </tr>
+    </table>
+</form>
+        <tr>
+</body>
+</html>

@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
+    <meta charset="UTF-8">
+    <title>洲际杯</title>
+</head>
+<body>
+<img style="width: 70px"  src="{% static 'img/logo.jpeg' %}" >
+<h3 align="center" style="color: aqua">
+    洲际锦标赛
+</h3>
+
+<form method="post" action="../Information/">
+    {% csrf_token %}
+
+ <table border="1px" width="100%" style="border-collapse: collapse;">
+
+<tr>
+    <td align="center" width="100px">
+          <input type="submit" name="type" value="亚洲杯" style="color: dodgerblue">
+    </td>
+    <td align="center" width="100px">
+        <input type="submit" name="type" value="欧洲杯" style="color: dodgerblue">
+    </td>
+    <td align="center" width="100px">
+        <input type="submit" name="type" value="美洲杯" style="color: dodgerblue">
+    </td>
+</tr>
+ </table>
+</form>
+  <hr  />
+
+    <table border="1px" width="100%" style="border-collapse: collapse;">
+
+        <tr>
+            <th>国家</th>
+            <th>比赛名字</th>
+            <th>教练</th>
+            <th>参赛次数</th>
+
+        </tr>
+        {% for team in teams %}
+            <tr>
+              
+                <td align="center"> 
+                     <a href="/Country/Players/?country={{ team.country }}">
+                         {{ team.country }}
+                     </a>
+                    
+                </td>
+              
+               
+                <td align="center"> 
+                     <a href="/Continent/Ranking/?country={{ team.country }}">
+                         {{ team.Cup }}
+                     </a>
+                    
+                </td>
+                <td align="center">{{ team.Coach}} </td>
+            <td align="center">{{ team.Times}} </td>
+            
+            </tr>
+        {% endfor %}
+    </table>
+
+
+</body>
+</html>

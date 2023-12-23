@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
+    <meta charset="UTF-8">
+    <title>修改队伍</title>
+</head>
+<body>
+<img style="width: 70px"  src="{% static 'img/logo.jpeg' %}" >
+    <h3 align="center" style="color: aqua">
+        按照您的要求进行编辑
+    </h3>
+    <form method="post" action="../edit/">
+        {% csrf_token %}
+    <table align="center">
+        <tr>
+            
+            <th>队名</th>
+            
+            <td>
+                <input  name ='team' value="{{ team.Teamname }}" />
+            </td>
+        </tr>
+          <tr>
+            <th>16强</th>
+            
+            <td>
+                <input  name ='16' value="{{ team.Final16 }}" />
+            </td>
+        </tr>
+          <tr>
+            <th>8强</th>
+            
+            <td>
+                <input  name ='8' value="{{ team.Final8 }}" />
+            </td>
+        </tr>
+          <tr>
+            <th>4强</th>
+            
+            <td>
+                <input  name ='4' value="{{ team.HalfFinal }}" />
+            </td>
+        </tr>
+          <tr>
+            <th>冠亚军</th>
+            
+            <td>
+                <input  name ='2' value="{{ team.Final }}" />
+            </td>
+        </tr>
+       
+        <tr>
+            <td colspan="2">
+                <input type="submit"/>
+            </td>
+        </tr>
+    </table>
+        
+        
+    </form>
+
+</body>
+</html>

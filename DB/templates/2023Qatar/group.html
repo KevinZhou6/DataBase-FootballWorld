@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
+     <style>
+    #fixed-image {
+      position: fixed;
+      top: 300px;
+      left: 0%;
+      width: 60%;
+      height: 60%;
+    }
+  </style>
+    <meta charset="UTF-8">
+    <title>小组赛分组及积分</title>
+</head>
+<body>
+<h3 align="center" style="color: aqua">
+    查看小组赛分组
+</h3>
+<img style="width: 70px"  src="{% static 'img/logo.jpeg' %}" >
+<span align="center">
+    <form method="post" action="../Groups/">
+        {% csrf_token %}
+         <input type="submit" name="type" value="A" style="color: dodgerblue">
+         <input type="submit" name="type" value="B" style="color: dodgerblue">
+         <input type="submit" name="type" value="C" style="color: dodgerblue">
+         <input type="submit" name="type" value="D" style="color: dodgerblue">
+         <input type="submit" name="type" value="E" style="color: dodgerblue">
+         <input type="submit" name="type" value="F" style="color: dodgerblue">
+         <input type="submit" name="type" value="G" style="color: dodgerblue">
+         <input type="submit" name="type" value="H" style="color: dodgerblue">
+      </form>
+   
+</span>
+ <table border="1px" width="100%" style="border-collapse: collapse;">
+    
+        <tr>
+            <th>队名</th>
+            <th>分组</th>
+            <th>小组赛积分</th>
+            
+
+        </tr>
+        {% for team in teams %}
+            <tr>
+                <td align="center" width="200px">{{ team.TeamName}} </td>
+                <td align="center" width="100px">{{ team.GNumber}} </td>
+                <td align="center" width="100px">{{ team.Score}} </td>
+            </tr>
+        {% endfor %}
+    </table>
+     <img  id = "fixed-image"  src = "{% static 'img/QatarGroups.png' %}">
+</body>
+</html>

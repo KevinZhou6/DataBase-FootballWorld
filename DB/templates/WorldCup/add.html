@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
+    <meta charset="UTF-8">
+    <title>添加世界杯</title>
+</head>
+<body>
+<img style="width: 70px"  src="{% static 'img/logo.jpeg' %}" >
+    <h1 align="center"> 欢迎进入编辑器 </h1>
+    <form method="post" action="../add/">
+    {% csrf_token %}
+    <table align="center">
+        <tr>
+            <th>举办时间</th>
+            <td><input name="time"></td>
+        </tr>
+        <tr>
+            <th>举办地</th>
+            <td><input name="place"/></td>
+        </tr>
+        <tr>
+            <th>冠军</th>
+            <td><input name="country"/></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

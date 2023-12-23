@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑</title>
+      <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
+</head>
+<body>
+<img style="width: 70px"  src="{% static 'img/logo.jpeg' %}" >
+    <h2 align="center">更改世界杯信息</h2>
+<form method="post" action="../edit/">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <th>举办时间</th>
+            <td><input  name="time" value="{{ Cup.time }}"/></td>
+        </tr>
+          
+        <tr>
+            <th>举办地</th>
+            <td><input type = "text" name="place" value="{{ Cup.place}}"></td>
+        </tr>
+        <tr>
+            <th>冠军</th>
+            <td><input type ="text" name="country" value="{{ Cup.country }}"/></td>
+        </tr>
+        
+        <tr>
+            <td colspan="2">
+                <input type = "submit"/>
+            </td>
+        </tr>
+        
+    </table>
+</form>
+</body>
+</html>

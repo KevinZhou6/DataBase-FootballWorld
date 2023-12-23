@@ -1,0 +1,56 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
+    <meta charset="UTF-8">
+    <title>国家队信息</title>
+</head>
+<body>
+<img style="width: 70px"  src="{% static 'img/logo.jpeg' %}" >
+<h3 align="center" style="color: aqua">
+    国家信息
+</h3>
+<div  align="right">
+    
+</div>
+<table border="1px" width="100%" style="border-collapse: collapse;">
+
+        <tr>
+           
+            <th>国家</th>
+            <th>教练</th>
+            <th>参加世界杯次数</th>
+             <th>位置</th>
+          
+
+        </tr>
+        {% for country in Countries %}
+            <tr>
+              
+                <td align="center"> 
+                     <a href="../Players/?country={{ country.Name }}">
+                         {{ country.Name }}
+                     </a>
+                    
+                </td>
+              
+               
+                <td align="center">{{ country.Coach}} </td>
+                <td align="center">{{ country.WorldCups}} </td>
+            <td align="center">{{ country.Place}} </td>
+               
+               
+
+            </tr>
+        {% endfor %}
+    </table>
+ <div align="left">
+        <a href="../Information/add">
+            <img style="width: 50px" src="{% static 'img/R-C.png' %}" />
+        </a>
+        
+ </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
+    <meta charset="UTF-8">
+    <title>添加球员</title>
+    
+</head>
+<body>
+    <h1 align="center" style="color: aqua"> 请添加球员信息 </h1>
+    <form method="post" action="../add/">
+    {% csrf_token %}
+    <table align="center">
+        <tr>
+            <th>姓名</th>
+            <td><input name="name"></td>
+        </tr>
+        <tr>
+            <th>国籍</th>
+            <td><input name="country"/></td>
+        </tr>
+        <tr>
+            <th>生涯比赛数</th>
+            <td><input name="game"/></td>
+        </tr>
+        <tr>
+            <th>生涯进球数</th>
+            <td><input name="goal"></td>
+        </tr>
+       
+        <tr>
+            <td colspan='1'>
+                <input type="submit"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

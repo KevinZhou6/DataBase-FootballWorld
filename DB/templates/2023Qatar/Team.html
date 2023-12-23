@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
+    <meta charset="UTF-8">
+    <title>参赛队</title>
+</head>
+<body style="background-color: #d5b8ec;">
+<h3 align="center" style="color: aqua">
+    查看参赛队
+</h3>
+<img style="width: 70px"  src="{% static 'img/logo.jpeg' %}" >
+<div align="right">
+    <a   href="../Teams/Search" >
+    <input   style="width: 100px; height: 30px;" type="button" value ="搜索">
+</a>
+</div>
+
+ <table border="1px" width="100%" style="border-collapse: collapse;">
+
+        <tr>
+            <th>队名</th>
+            <th>16强</th>
+            <th>8强</th>
+            <th>4强</th>
+            <th>决赛</th>
+            <th>操作</th>
+
+        </tr>
+        {% for team in teams %}
+            <tr>
+                <td align="center">{{ team.Teamname}} </td>
+                <td align="center">{{ team.Final16}} </td>
+                <td align="center">{{ team.Final8}} </td>
+                <td align="center">{{ team.HalfFinal}} </td>
+                <td align="center">{{ team.Final}} </td>
+                <td align="center">
+                <a href="../Teams/edit?teamname={{ team.Teamname }}">
+                    编辑
+                </a>
+                <a href="../Teams/delete?teamname={{ team.Teamname }}">
+                    删除
+                </a>
+            </td>
+
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+    <div align="left">
+        <a href="../Teams/add">
+            <img style="width: 50px" src="{% static 'img/R-C.png' %}" />
+        </a>
+        
+    </div>
+
+    <img   style ="height: 80%; width: 90%" src = "{% static path %}">
+
+</html>

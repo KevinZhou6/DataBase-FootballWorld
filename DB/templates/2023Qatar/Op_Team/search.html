@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
+    <meta charset="UTF-8">
+    <title>搜索队伍</title>
+</head>
+<body>
+<img style="width: 70px"  src="{% static 'img/logo.jpeg' %}" >
+    <h3 align="center" style="color: aqua">
+        按照您的要求进行搜索
+    </h3>
+    <form method="post" action="../">
+        {% csrf_token %}
+    <table align="center">
+        <tr>
+            
+            <td>
+                <input type="radio" name="op" value="0">
+                
+            </td>
+            
+            <th>队名</th>
+            
+            <td>
+                <input  name ='team' />
+            </td>
+        </tr>
+         <tr>
+            <td>
+                <input type="radio" name="op" value="1">
+            </td>
+            <th>类型</th>
+             <td>
+                 <select name="type" id="color" size="4" >
+                  <option value="Final16">16强</option>
+                  <option value="Final8">8强</option>
+                  <option value="HalfFinal">4强</option>
+                 <option value="Final">冠亚军</option>
+                 </select>
+             </td>
+             
+            
+      
+
+        </tr>
+        
+       
+        <tr>
+            <td colspan="2">
+                <input type="submit"/>
+            </td>
+        </tr>
+    </table>
+        
+        
+    </form>
+    
+</body>
+</html>

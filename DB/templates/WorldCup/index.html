@@ -1,0 +1,52 @@
+{% load static %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>往届世界杯</title>
+      <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
+</head>
+<body>
+<img style="width: 70px"  src="{% static 'img/logo.jpeg' %}" >
+    <div align="right">
+        <a href="../CupWorldSearch/">搜索</a>
+    </div>
+    <table border="1px" width="100%" style="border-collapse: collapse;">
+        
+        <tr>
+            <th>时间</th>
+            <th>举办地</th>
+            <th>冠军国家</th>
+            <th>编辑</th>
+            
+        </tr>
+        {% for cup in CUPS %}
+            <tr>
+                <td align="center">{{ cup.time}} </td>
+                <td align="center">{{ cup.place }} </td>
+                <td align="center">{{ cup.country}} </td>
+                <td align="center">
+                <a href="../CupWorld/edit?time={{ cup.time }}">
+                    编辑
+                </a>
+                <a href="../CupWorld/delete?time={{ cup.time }}">
+                    删除
+                </a>
+            </td>
+               
+            </tr>
+        {% endfor %}
+    </table>
+   
+
+    <span align="left">
+        <a href="../CupWorld/add">
+            <img style="width: 50px" src="{% static 'img/R-C.png' %}" />
+        </a>
+        
+    </span>
+
+   
+</body>
+</html>

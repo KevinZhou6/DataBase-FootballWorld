@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
+    <meta charset="UTF-8">
+    <title>比赛日程</title>
+</head>
+<body >
+<h3 align ="center" style="color: aqua">
+    欢迎查看比赛日程
+</h3>
+
+
+    <div >
+         <img style="width: 70px"  src="{% static 'img/logo.jpeg' %}" >
+
+        <img  align="right" style = "  width: 1000px ;height: 200px ;" src ="{% static 'img/Qatarbg.png' %}">
+    </div>
+    <form method="POST" action="../Competitions/">
+        {% csrf_token %}
+ 
+    <table border="1px" width="100%" style="border-collapse: collapse;">
+        <tr>
+            <th>
+                <input type="submit" value="队名" name = 'type'>
+                
+            </th>
+             <th>
+                <input type="submit" value="组别" name = 'type'>
+                
+            </th>
+            
+        </tr>
+    </table>
+    <table border="1px" width="100%" style="border-collapse: collapse;">
+        <tr>
+            <th>
+               <input type="text" name ='input'>
+                
+            </th>
+            
+            
+        </tr>
+        </table>
+        
+       </form>    
+    
+
+    <table border="1px" width="100%" style="border-collapse: collapse;">
+
+        <tr>
+            <th>队1</th>
+            <th>队2</th>
+            <th>组别</th>
+            <th>比赛时间</th>
+            <th>比赛地点</th>
+            <th>比分</th>
+
+        </tr>
+        {% for team in teams %}
+            <tr>
+                <td align="center">{{ team.Name1}} </td>
+                <td align="center">{{ team.Name2}} </td>
+                <td align="center">{{ team.Type}} </td>
+                <td align="center">{{ team.Time}} </td>
+                <td align="center">{{ team.Place}} </td>
+                <td align="center">{{ team.Score}} </td>
+               
+           
+
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</body>
+</html>

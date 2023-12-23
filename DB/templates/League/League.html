@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
+    <meta charset="UTF-8">
+    <title>超级联赛
+    </title>
+</head>
+<body>
+<img style="width: 70px"  src="{% static 'img/logo.jpeg' %}" >
+<h3 align="center" style="color: aqua">
+    超级联赛
+</h3>
+<div>
+
+
+ <table border="1px" width="100%" style="border-collapse: collapse;">
+
+<tr>
+    <td align="center" width="100px">
+          <a href="../League/Asia/">
+              <input type="submit" name="type" value="亚洲联赛" style="color: dodgerblue">
+          </a>
+    </td>
+    <td align="center" width="100px">
+         <a href="../League/Europe/">
+        <input type="submit" name="type" value="欧洲联赛" style="color: dodgerblue">
+         </a>
+    </td>
+    <td align="center" width="100px">
+        <a href="../League/America/">
+        <input type="submit" name="type" value="美洲联赛" style="color: dodgerblue">
+        </a>
+    </td>
+</tr>
+ </table>
+</div>
+</body>
+</html>
