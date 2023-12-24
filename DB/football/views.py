@@ -338,7 +338,7 @@ def Leagueshow(request):
     return render(request,"League/League.html")
 
 def LeagueEurope(request):
-    return render(request,"League/Europe.html")
+    return render(request, "League/Europen/Europe.html")
 
 
 def LeagueEuropeLilaga(request):
@@ -359,3 +359,197 @@ def LeagueEuropeLilaga(request):
             cursor.execute(sql,[time,Cup])
             res = cursor.fetchall()
             return render(request, "League/Europen/Lilaga.html", {'teams': res})
+
+
+def LeagueEuropePremierLeague(request):
+    conn = connect()
+    Cup = "英超"
+    time = "2023-24"
+    if request.method == "GET":
+        with conn.cursor(cursorclass=MySQLdb.cursors.DictCursor) as cursor:
+            sql = "SELECT * from scoreboard WHERE Time =%s AND Cup =%s"
+            cursor.execute(sql,[time,Cup])
+            res = cursor.fetchall()
+
+        return render(request,"League/Europen/Premier League.html",{'teams':res})
+    else :
+        time = request.POST.get("time")
+        with conn.cursor(cursorclass=MySQLdb.cursors.DictCursor) as cursor:
+            sql = "SELECT * from scoreboard WHERE Time =%s AND Cup =%s"
+            cursor.execute(sql,[time,Cup])
+            res = cursor.fetchall()
+            return render(request, "League/Europen/Premier League.html", {'teams': res})
+
+def LeagueEuropePremierBundesliga(request):
+    conn = connect()
+    Cup = "德甲"
+    time = "2023-24"
+    if request.method == "GET":
+        with conn.cursor(cursorclass=MySQLdb.cursors.DictCursor) as cursor:
+            sql = "SELECT * from scoreboard WHERE Time =%s AND Cup =%s"
+            cursor.execute(sql, [time, Cup])
+            res = cursor.fetchall()
+
+        return render(request, "League/Europen/Bundesliga.html", {'teams': res})
+    else:
+        time = request.POST.get("time")
+        with conn.cursor(cursorclass=MySQLdb.cursors.DictCursor) as cursor:
+            sql = "SELECT * from scoreboard WHERE Time =%s AND Cup =%s"
+            cursor.execute(sql, [time, Cup])
+            res = cursor.fetchall()
+            return render(request, "League/Europen/Bundesliga.html", {'teams': res})
+
+
+
+
+def LeagueEuropePremierLigue(request):
+    conn = connect()
+    Cup = "法甲"
+    time = "2023-24"
+    if request.method == "GET":
+        with conn.cursor(cursorclass=MySQLdb.cursors.DictCursor) as cursor:
+            sql = "SELECT * from scoreboard WHERE Time =%s AND Cup =%s"
+            cursor.execute(sql, [time, Cup])
+            res = cursor.fetchall()
+
+        return render(request, "League/Europen/Ligue.html", {'teams': res})
+    else:
+        time = request.POST.get("time")
+        with conn.cursor(cursorclass=MySQLdb.cursors.DictCursor) as cursor:
+            sql = "SELECT * from scoreboard WHERE Time =%s AND Cup =%s"
+            cursor.execute(sql, [time, Cup])
+            res = cursor.fetchall()
+            return render(request, "League/Europen/Ligue.html", {'teams': res})
+
+def LeagueEuropePremierSerie(request):
+    conn = connect()
+    Cup = "意甲"
+    time = "2023-24"
+    if request.method == "GET":
+        with conn.cursor(cursorclass=MySQLdb.cursors.DictCursor) as cursor:
+            sql = "SELECT * from scoreboard WHERE Time =%s AND Cup =%s"
+            cursor.execute(sql, [time, Cup])
+            res = cursor.fetchall()
+
+        return render(request, "League/Europen/Serie.html", {'teams': res})
+    else:
+        time = request.POST.get("time")
+        with conn.cursor(cursorclass=MySQLdb.cursors.DictCursor) as cursor:
+            sql = "SELECT * from scoreboard WHERE Time =%s AND Cup =%s"
+            cursor.execute(sql, [time, Cup])
+            res = cursor.fetchall()
+            return render(request, "League/Europen/Serie.html", {'teams': res})
+
+
+
+def LeagueClubs(resquest):
+    conn = connect()
+    name = resquest.GET.get("Name")
+    Time   = resquest.GET.get("Time")
+    print(name,Time)
+    with conn.cursor(cursorclass=MySQLdb.cursors.DictCursor) as cursor:
+        sql = "SELECT * from clubsplayers WHERE Club =%s AND Time =%s"
+        cursor.execute(sql,[name, Time])
+        players = cursor.fetchall()
+        sql = "SELECT * from clubscoach WHERE Club =%s AND Time =%s"
+        cursor.execute(sql, [name, Time])
+        coaches = cursor.fetchone()
+        coach = coaches.get("Coach")
+        # print(coach)
+        return render(resquest,"League/Clubs/Players.html", {'players': players, 'name':name,'coach':coach})
+
+
+
+def LeagueAsia(request):
+    return render(request,"League/Asian/Asia.html")
+
+def LeagueJapan(request):
+    conn = connect()
+    Cup = "日本足球甲级联赛"
+    time = "2023-24"
+    if request.method == "GET":
+        with conn.cursor(cursorclass=MySQLdb.cursors.DictCursor) as cursor:
+            sql = "SELECT * from scoreboard WHERE Time =%s AND Cup =%s"
+            cursor.execute(sql, [time, Cup])
+            res = cursor.fetchall()
+
+        return render(request, "League/Asian/Japan.html", {'teams': res})
+    else:
+        time = request.POST.get("time")
+        with conn.cursor(cursorclass=MySQLdb.cursors.DictCursor) as cursor:
+            sql = "SELECT * from scoreboard WHERE Time =%s AND Cup =%s"
+            cursor.execute(sql, [time, Cup])
+            res = cursor.fetchall()
+            return render(request, "League/Asian/Japan.html", {'teams': res})
+
+
+def LeagueKorea(request):
+    conn = connect()
+    Cup = "韩国足球甲级联赛"
+    time = "2023-24"
+    if request.method == "GET":
+        with conn.cursor(cursorclass=MySQLdb.cursors.DictCursor) as cursor:
+            sql = "SELECT * from scoreboard WHERE Time =%s AND Cup =%s"
+            cursor.execute(sql, [time, Cup])
+            res = cursor.fetchall()
+
+        return render(request, "League/Asian/Korea.html", {'teams': res})
+    else:
+        time = request.POST.get("time")
+        with conn.cursor(cursorclass=MySQLdb.cursors.DictCursor) as cursor:
+            sql = "SELECT * from scoreboard WHERE Time =%s AND Cup =%s"
+            cursor.execute(sql, [time, Cup])
+            res = cursor.fetchall()
+            return render(request, "League/Asian/Korea.html", {'teams': res})
+
+
+def LeagueChina(request):
+    conn = connect()
+    Cup = "中超联赛"
+    time = "2023-24"
+    if request.method == "GET":
+        with conn.cursor(cursorclass=MySQLdb.cursors.DictCursor) as cursor:
+            sql = "SELECT * from scoreboard WHERE Time =%s AND Cup =%s"
+            cursor.execute(sql, [time, Cup])
+            res = cursor.fetchall()
+
+        return render(request, "League/Asian/China.html", {'teams': res})
+    else:
+        time = request.POST.get("time")
+        with conn.cursor(cursorclass=MySQLdb.cursors.DictCursor) as cursor:
+            sql = "SELECT * from scoreboard WHERE Time =%s AND Cup =%s"
+            cursor.execute(sql, [time, Cup])
+            res = cursor.fetchall()
+            return render(request, "League/Asian/China.html", {'teams': res})
+
+
+def LeagueAmerica(request):
+    conn = connect()
+    Cup = "南美解放者杯"
+    time = "2023-24"
+    if request.method == "GET":
+        with conn.cursor(cursorclass=MySQLdb.cursors.DictCursor) as cursor:
+            sql = "SELECT * from scoreboard WHERE Time =%s AND Cup =%s"
+            cursor.execute(sql, [time, Cup])
+            res = cursor.fetchall()
+
+        return render(request, "League/American/America.html", {'teams': res})
+    else:
+        time = request.POST.get("time")
+        with conn.cursor(cursorclass=MySQLdb.cursors.DictCursor) as cursor:
+            sql = "SELECT * from scoreboard WHERE Time =%s AND Cup =%s"
+            cursor.execute(sql, [time, Cup])
+            res = cursor.fetchall()
+            return render(request, "League/American/America.html", {'teams': res})
+
+
+def PlayerClubs(request):
+    conn = connect()
+    name = request.GET.get("Name")
+    with conn.cursor(cursorclass=MySQLdb.cursors.DictCursor) as cursor:
+        sql = "SELECT * from playerclub WHERE Name =%s"
+        cursor.execute(sql,[name])
+        res = cursor.fetchall()
+    return(request,"HistoryClubs/Clubs.html", {'clubs': res})
+
+
