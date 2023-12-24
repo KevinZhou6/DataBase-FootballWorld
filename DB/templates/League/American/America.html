@@ -2,31 +2,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
+      <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
     <meta charset="UTF-8">
-    <title>西甲</title>
+    <meta charset="UTF-8">
+    <title>美洲联赛</title>
 </head>
 <body>
 <h3 align="center" style="color: aqua">
-    西班牙甲级联赛
+    查看美洲超级联赛
 </h3>
 <img style="width: 70px"  src="{% static 'img/logo.jpeg' %}" >
 
 <div align="right">
-    <form method="post" action="../Lilaga/">
+    <form method="post" action="../America/">
         {% csrf_token %}
         <input type="text" name = "time" placeholder="请输入赛季">
          <input type="submit">
     </form>
     
 </div>
- <table border="1px" width="100%" style="border-collapse: collapse;">
+
+<table border="1px" width="100%" style="border-collapse: collapse;">
 
         <tr>
             <th>俱乐部</th>
             <th>赛季</th>
             <th>联赛</th>
-            <th>积分</th>
+            <th>排名</th>
             
 
         </tr>
@@ -40,12 +42,11 @@
                 </td>
                 <td align="center">{{ team.Time}} </td>
                 <td align="center">{{ team.Cup}} </td>
-                <td align="center">{{ team.Score}} </td>
+                <td align="center">{{ team.Type}} </td>
             </td>
 
             </tr>
         {% endfor %}
  </table>
-
 </body>
 </html>

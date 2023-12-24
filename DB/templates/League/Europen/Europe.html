@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
+    <meta charset="UTF-8">
+    <title>欧洲联赛</title>
+</head>
+<body>
+<h3 align="center" style="color: aqua">
+    查看欧洲五大超级联赛
+</h3>
+<img style="width: 70px"  src="{% static 'img/logo.jpeg' %}" >
+
+<table border="0px" style="border-collapse: collapse;" align="center">
+    <tr>
+        <td style="width: 200px">
+            <img style="width: 200px; "  src="{% static 'img/西甲.png' %}"  /> 
+            <a href="./Lilaga/">
+                西甲
+            </a>
+           
+        </td>
+      <td style="width: 200px">
+            <img style="width: 200px; height: 200px"  src="{% static 'img/英超.png' %}"  /> 
+            <a href="./PremierLeague/">
+                英超
+            </a>
+           
+        </td>
+        <td style="width: 200px">
+             <img style="width: 200px; "  src="{% static 'img/法甲.png' %}"  />
+             <a href="./Ligue/">
+                法甲
+            </a>
+            
+        </td>
+    </tr>
+</table>
+<table border="1px"  style="border-collapse: collapse;" align="center">
+     <tr>
+        <td style="width: 200px">
+            <img style="width: 200px; "  src="{% static 'img/德甲.png' %}"  />
+            <a href="./Bundesliga/">
+                德甲
+            </a>
+            
+        </td>
+        <td style="width: 200px">
+             <img style="width: 200px; height: 185px"  src="{% static 'img/意甲.png' %}"  />  
+            <a href="./Serie/">
+                意甲
+            </a>
+           
+        </td>
+       
+    </tr>
+    
+    </table>
+</body>
+</html>

@@ -4,16 +4,16 @@
 <head>
      <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
     <meta charset="UTF-8">
-    <title>西甲</title>
+    <title>中超联赛</title>
 </head>
 <body>
 <h3 align="center" style="color: aqua">
-    西班牙甲级联赛
+    中超联赛
 </h3>
 <img style="width: 70px"  src="{% static 'img/logo.jpeg' %}" >
 
 <div align="right">
-    <form method="post" action="../Lilaga/">
+    <form method="post" action="../China/">
         {% csrf_token %}
         <input type="text" name = "time" placeholder="请输入赛季">
          <input type="submit">

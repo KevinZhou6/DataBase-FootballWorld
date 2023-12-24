@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
+    <meta charset="UTF-8">
+    <title>历史俱乐部</title>
+</head>
+<body>
+<h3 align="center" style="color: aqua">
+    历史俱乐部
+</h3>
+ <table border="1px" width="100%" style="border-collapse: collapse;">
+
+        <tr>
+            <th>俱乐部</th>
+            <th>赛季</th>
+            <th>位置</th>
+            <th>年薪</th>
+            
+
+        </tr>
+        {% for club in clubs %}
+            <tr>
+                 <td align="center"> 
+                    <a href="/League/Clubs/?Name={{ club.Club }}">
+                         {{ club.Club }}
+                     </a>
+                    
+                </td>
+                <td align="center">{{ club.Time}} </td>
+                <td align="center">{{ club.Position}} </td>
+                <td align="center">{{ club.Salary}} </td>
+            </td>
+
+            </tr>
+        {% endfor %}
+ </table>
+
+</body>
+</html>

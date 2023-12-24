@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <title>亚洲联赛</title>
+</head>
+<body>
+<h3 align="center" style="color: aqua">
+    查看亚洲联赛
+</h3>
+<img style="width: 70px"  src="{% static 'img/logo.jpeg' %}" >
+<table border="0px" style="border-collapse: collapse;" align="center">
+    <tr>
+        <td style="width: 200px">
+            <img style="width: 200px; "  src="{% static 'img/中超.png' %}"  /> 
+            <a href="./China/">
+                中超
+            </a>
+           
+        </td>
+      <td style="width: 200px">
+            <img style="width: 200px; height: 200px"  src="{% static 'img/日本.jpg' %}"  /> 
+            <a href="./Japan/">
+                日本超级联赛
+            </a>
+           
+        </td>
+        <td style="width: 200px">
+             <img style="width: 200px; "  src="{% static 'img/韩国.png' %}"  />
+             <a href="./Korea/">
+                韩国超级联赛
+            </a>
+            
+        </td>
+    </tr>
+</table>
+</body>
+</html>

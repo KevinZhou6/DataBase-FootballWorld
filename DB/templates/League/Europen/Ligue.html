@@ -2,18 +2,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
+    <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
     <meta charset="UTF-8">
-    <title>西甲</title>
+    <title>法甲</title>
 </head>
 <body>
 <h3 align="center" style="color: aqua">
-    西班牙甲级联赛
+    法国足球甲级联赛
 </h3>
 <img style="width: 70px"  src="{% static 'img/logo.jpeg' %}" >
 
 <div align="right">
-    <form method="post" action="../Lilaga/">
+    <form method="post" action="../Ligue/">
         {% csrf_token %}
         <input type="text" name = "time" placeholder="请输入赛季">
          <input type="submit">
@@ -27,16 +27,16 @@
             <th>赛季</th>
             <th>联赛</th>
             <th>积分</th>
-            
+
 
         </tr>
         {% for team in teams %}
             <tr>
-                 <td align="center"> 
-                    <a href="/League/Clubs/?Name={{ team.Name }}&Time={{ team.Time }}">
+                 <td align="center">
+                  <a href="/League/Clubs/?Name={{ team.Name }}&Time={{ team.Time }}">
                          {{ team.Name }}
                      </a>
-                    
+
                 </td>
                 <td align="center">{{ team.Time}} </td>
                 <td align="center">{{ team.Cup}} </td>
@@ -46,6 +46,5 @@
             </tr>
         {% endfor %}
  </table>
-
 </body>
 </html>
