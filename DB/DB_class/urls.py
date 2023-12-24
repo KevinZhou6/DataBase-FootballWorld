@@ -43,6 +43,17 @@ urlpatterns = [
     path('League/',views.Leagueshow),
     path('League/Europe/',views.LeagueEurope),
     path('League/Europe/Lilaga/',views.LeagueEuropeLilaga),
+    path('League/Europe/PremierLeague/',views.LeagueEuropePremierLeague),
+    path('League/Europe/Bundesliga/',views.LeagueEuropePremierBundesliga),
+    path('League/Europe/Ligue/',views.LeagueEuropePremierLigue),
+    path('League/Europe/Serie/',views.LeagueEuropePremierSerie),
+    path('League/Clubs/',views.LeagueClubs),
+    path('League/Asia/',views.LeagueAsia),
+    path('League/Asia/Japan/',views.LeagueJapan),
+    path('League/Asia/Korea/',views.LeagueKorea),
+    path('League/Asia/China/',views.LeagueChina),
+    path('League/America/',views.LeagueAmerica),
+    path('PlayerClubs/',views.PlayerClubs),
 
 
 
