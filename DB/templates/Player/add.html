@@ -7,7 +7,7 @@
     <title>添加球员</title>
     
 </head>
-<body>
+<body style="background-color: #d5b8ec;">
     <h1 align="center" style="color: aqua"> 请添加球员信息 </h1>
     <form method="post" action="../add/">
     {% csrf_token %}
@@ -36,5 +36,10 @@
         </tr>
     </table>
 </form>
+ <div align="right">
+        <a href="../">
+        <input style="color: aquamarine"   type="button" value="返回">
+    </a>
+    </div>
 </body>
 </html>

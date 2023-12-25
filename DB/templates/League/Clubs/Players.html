@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>俱乐部</title>
 </head>
-<body>
+<body style="background-color: #d5b8ec;">
 <h3 align="center" style="color: aqua">
     {{ name }} 教练：{{ coach }}
 </h3>
@@ -26,7 +26,12 @@
             <tr>
                 <td align="center">{{ player.Club }}</td>
                 <td align="center">{{ player.Time}} </td>
-                <td align="center">{{ player.Name}} </td>
+                <td align="center"> 
+                    <a href="/Player/Information/?Name={{ player.Name }}">
+                         {{ player.Name }}
+                     </a>
+                    
+                </td>
             <td align="center">{{ player.Position}} </td>
             <td align="center">{{ player.Number}} </td>
             </tr>

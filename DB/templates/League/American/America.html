@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <title>美洲联赛</title>
 </head>
-<body>
+<body style="background-color: #d5b8ec;">
 <h3 align="center" style="color: aqua">
     查看美洲超级联赛
 </h3>
@@ -28,25 +28,28 @@
             <th>俱乐部</th>
             <th>赛季</th>
             <th>联赛</th>
-            <th>排名</th>
+         
             
 
         </tr>
         {% for team in teams %}
             <tr>
                  <td align="center"> 
-                    <a href="/League/Clubs/?Name={{ team.Name }}&Time={{ team.Time }}">
-                         {{ team.Name }}
-                     </a>
+                    {{ team.Name }}
                     
                 </td>
                 <td align="center">{{ team.Time}} </td>
                 <td align="center">{{ team.Cup}} </td>
-                <td align="center">{{ team.Type}} </td>
+              
             </td>
 
             </tr>
         {% endfor %}
  </table>
+<div align="right">
+        <a href="../">
+        <input style="color: aquamarine"   type="button" value="返回">
+    </a>
+    </div>
 </body>
 </html>

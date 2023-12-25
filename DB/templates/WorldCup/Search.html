@@ -6,7 +6,7 @@
     <title>搜索指定世界杯</title>
       <link rel="shortcut icon" href={% static 'img/bitbug_favicon (1).ico' %}>
 </head>
-<body>
+<body style="background-color: #d5b8ec;">
    <img style="width: 70px"  src="{% static 'img/logo.jpeg' %}" >
      <form method="post" action="../CupWorld/">
     {% csrf_token %}
@@ -29,6 +29,10 @@
         </tr>
     </table>
 </form>
-        <tr>
+         <div align="right">
+        <a href="/football/CupWorld/">
+        <input style="color: aquamarine"   type="button" value="返回">
+    </a>
+    </div>
 </body>
 </html>
