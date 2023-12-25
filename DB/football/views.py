@@ -233,7 +233,7 @@ def QatarCompetitions(request):
 def PlayerInformation(request):
     conn =connect()
     if request.method == "GET":
-
+       # name = request.GET.get("Name")
         with conn.cursor(cursorclass=MySQLdb.cursors.DictCursor) as cursor:
             sql = "SELECT * FROM player "
             cursor.execute(sql)
