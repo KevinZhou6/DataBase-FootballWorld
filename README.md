@@ -1,5 +1,10 @@
 # DataBase-FootballWorld
 Django &amp; MySQL 数据库系统 东南大学
+<div>
+  <img style = "width : 300px"  src ="photo/League.png">
+<img style = "width : 300px"  src ="photo/Clubs.png">
+  <img style = "width : 300px" src ="photo/Qatar日程.png">
+</div>
 
 
 
